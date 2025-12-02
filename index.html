@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MBTECH EXPRESS — Assistência Técnica Premium</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --accent:#00bfa6;
+      --accent-2:#00d4b8;
+      --muted:#9aa4b2;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --max-w:1200px;
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#071027 0%, #071726 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .container{
+      max-width:var(--max-w);
+      margin:0 auto;
+      padding:28px;
+    }
+
+    /* HERO with curved image */
+    .hero{
+      position:relative;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:24px;
+      align-items:center;
+      overflow:visible;
+      margin-bottom:28px;
+    }
+    .hero-inner{
+      display:flex;
+      gap:32px;
+      align-items:center;
+      justify-content:space-between;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:28px;
+      border-radius:22px;
+      box-shadow: 0 8px 30px rgba(3,6,12,0.6);
+      position:relative;
+      z-index:2;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-left{
+      flex:1;
+      min-width:260px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:6px;
+    }
+    .logo{
+      width:64px;
+      height:64px;
+      border-radius:14px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#042428;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 8px 25px rgba(0,191,166,0.14), inset 0 -6px 20px rgba(255,255,255,0.06);
+    }
+    .eyebrow{
+      color:var(--accent-2);
+      font-weight:600;
+      font-size:13px;
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+    }
+    h1{
+      margin:6px 0 12px;
+      font-family:'Playfair Display', serif;
+      font-size:34px;
+      line-height:1.04;
+      color: #f8fbff;
+      letter-spacing: -0.02em;
+    }
+    .lead{
+      color:var(--muted);
+      font-size:15px;
+      max-width:560px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      margin-top:18px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      transition:transform .14s ease, box-shadow .14s ease;
+      cursor:pointer;
+      border:0;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#062325;
+      box-shadow: 0 10px 30px rgba(0,191,166,0.14);
+    }
+    .btn-ghost{
+      background:transparent;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .btn:hover{transform:translateY(-4px)}
+
+    .hero-right{
+      width:48%;
+      min-width:320px;
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    /* Curved card with image — replace header.jpg with your image */
+    .hero-card{
+      position:relative;
+      width:100%;
+      max-width:520px;
+      border-radius:22px;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(15,23,36,0.6), rgba(9,12,18,0.6));
+      box-shadow: 0 20px 50px rgba(2,6,12,0.7);
+    }
+    .hero-card .img{
+      width:100%;
+      height:320px;
+      background-image: url('header.jpg');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      display:block;
+    }
+    /* Curved mask bottom */
+    .hero-card .curve{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:84px;
+      background:linear-gradient(180deg,transparent 0%, rgba(7,22,36,0.9) 100%);
+      clip-path: ellipse(120% 60% at 50% 100%);
+      transform:translateY(28px);
+    }
+    .hero-card .info{
+      padding:20px 22px;
+      display:flex;
+      gap:14px;
+      align-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    }
+    .badge{font-size:13px;color:var(--muted);font-weight:600}
+    .price{margin-left:auto;font-weight:800;color:#dffbf3;background:rgba(0,0,0,0.12);padding:8px 12px;border-radius:10px}
+
+    /* Services grid */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px;
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(2,6,12,0.6);
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .service-title{font-weight:700;margin:6px 0;font-size:16px}
+    .service-desc{font-size:13px;color:var(--muted)}
+
+    /* Feature row */
+    .features{
+      display:flex;
+      gap:14px;
+      margin-top:22px;
+      align-items:stretch;
+    }
+    .feature{
+      flex:1;
+      padding:18px;
+      border-radius:14px;
+      background:var(--glass);
+      border:1px solid rgba(255,255,255,0.02);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .feature svg{width:36px;height:36px;flex-shrink:0}
+    .feature h4{margin:0;font-size:15px}
+    .feature p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    /* Process */
+    .process{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+    }
+    .step{
+      background:transparent;
+      padding:12px;
+      border-radius:12px;
+      text-align:center;
+      border:1px dashed rgba(255,255,255,0.03);
+    }
+    .step strong{display:block;font-size:14px;margin-top:8px}
+    .step small{display:block;color:var(--muted);margin-top:6px;font-size:12px}
+
+    /* Testimonials / trust */
+    .trust{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-top:22px;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .trust .icon{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#042428;font-family:'Playfair Display', serif;
+    }
+    .trust p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{
+      margin-top:40px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* WhatsApp floating */
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:120;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#25D366,#00bfa6);
+      color:#052b25;
+      box-shadow: 0 10px 30px rgba(0,183,140,0.16);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .whatsapp svg{width:20px;height:20px;filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25))}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .hero-right{width:100%;min-width:unset;justify-content:flex-start}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .process{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:560px){
+      .services{grid-template-columns:1fr}
+      .features{flex-direction:column}
+      h1{font-size:28px}
+      .hero-card .img{height:220px}
+    }
+
+
+:root {
+  --bg: #0B1020; /* azul petróleo premium */
+  --text: #d8dbd1;
+  --aqua: #4d9ea6;
+}
+
+/* HERO BASE */
+.hero-suave {
+  position: relative;
+  background: var(--bg);
+  padding: 120px 0;
+  overflow: hidden;
+  color: var(--text);
+}
+
+/* LEFT TEXT AREA */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.hero-left {
+  max-width: 560px;
+}
+
+.hero-left h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: white;
+}
+
+.hero-highlight {
+  color: var(--aqua);
+  font-weight: 900;
+}
+
+.hero-sub {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* CTA */
+.hero-btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 16px 32px;
+  background: var(--aqua);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  box-shadow: 0 14px 32px rgba(77,158,166,0.35);
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px);
+}
+
+/* Trust line */
+.hero-trust {
+  margin-top: 18px;
+  opacity: 0.75;
+}
+
+/* IMAGE AREA — SUAVE */
+.hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
+  
+  background-image: url("maos-reparando-telefone-manutencao-de-smartphone-centro-movel-telefones-celulares-consertar-engenheiro-de-laboratorio-consertar-telefone-celular-quebrado-na-mesa-dispositivo-eletronic.avif");
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.35;
+  filter: blur(1px) brightness(0.8);
+  
+  /* Diagonal suave */
+  clip-path: polygon(
+    20% 0%, 
+    100% 0%, 
+    100% 100%, 
+    0% 100%
+  );
+}
+
+/* MOBILE FIX */
+@media(max-width:900px){
+  .hero-image {
+    display: none;
+  }
+  .hero-left {
+    text-align: center;
+    margin: auto;
+  }
+}
+/* BADGES (balõezinhos) */
+.hero-badges {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-badges span {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  transition: .2s ease;
+}
+
+.hero-badges span:hover {
+  background: rgba(255,255,255,0.12);
+}
+/* ============================
+   S E R V I Ç O S   P R E M I U M
+============================ */
+
+.services-section {
+  padding: 100px 0;
+  background: #0B1020; /* combina com o hero */
+  color: #d8dbd1;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-header h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.services-header p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+/* GRID */
+.services-grid {
+  max-width: 1300px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* CARD */
+.service-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  padding: 26px;
+  border-radius: 18px;
+  transition: 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* TÍTULO */
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 12px 0 10px;
+}
+
+/* TEXTO */
+.service-card p {
+  font-size: 15px;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+/* ÍCONE */
+.service-card .icon {
+  font-size: 28px;
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+/* ============================
+   A T E N D I M E N T O   T E C H
+============================ */
+
+.loc-section {
+  padding: 100px 0;
+  background: #0B1020; /* fundo premium */
+  color: #d8dbd1;
+  text-align: center;
+}
+
+.loc-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.loc-header p {
+  font-size: 18px;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+/* GRID */
+.loc-grid {
+  max-width: 1300px;
+  width: 90%;
+  margin: auto;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* CARD */
+.loc-card {
+  padding: 26px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+}
+
+.loc-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* ÍCONE */
+.loc-icon {
+  font-size: 28px;
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+}
+
+/* TEXTO */
+.loc-card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+  </style>
+</head>
+<body>
+<header class="hero-suave">
+  <div class="hero-content">
+
+    <div class="hero-left">
+      <h1>
+        Seu celular está com problema?<br>
+        <span class="hero-highlight">A MBTECH vai até você.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Se o seu celular quebrou, travou, caiu, molhou,
+        não carrega ou parou de funcionar,
+        <strong>nós vamos até o seu endereço</strong> e realizamos o reparo na hora — com segurança e qualidade profissional.
+        <br><br>
+        Assistência técnica móvel com rapidez e exclusividade, no conforto da sua casa, trabalho ou condomínio.
+      </p>
+
+      <a href="https://wa.me/5561993976464" class="hero-btn">
+        Chamar um Técnico Agora
+      </a>
+
+      <!-- ⭐ BALÕEZINHOS PREMIUM -->
+      <div class="hero-badges">
+        <span>⚡ Atendimento imediato</span>
+        <span>💬 Orçamento rápido</span>
+        <span>🔒 Segurança total</span>
+      </div>
+
+      <p class="hero-trust">
+        🔧 Garantia de serviço • +500 reparos realizados
+      </p>
+    </div>
+
+  </div>
+
+  <div class="hero-image"></div>
+</header>
+<section id="servicos" class="services-section">
+  <div class="services-header">
+    <h2>🛠️ Serviços para o seu celular</h2>
+    <p>Se estiver com defeito, <strong>a MBTECH resolve pra você.</strong></p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <span class="icon">📱</span>
+      <h3>Troca de Tela</h3>
+      <p>Todas as marcas e modelos — substituição com testes completos.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🔋</span>
+      <h3>Troca de Bateria</h3>
+      <p>Diagnóstico e substituição com peças de qualidade.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">⚡</span>
+      <h3>Conector de Carga</h3>
+      <p>Reparo completo do circuito de carregamento.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🧠</span>
+      <h3>Reparos em Placa</h3>
+      <p>Microeletrônica, micro solda e recuperação de hardware.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">💧</span>
+      <h3>Oxidação / Líquidos</h3>
+      <p>Tratamento completo pós-umidade e restauração.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🔓</span>
+      <h3>Destravamento</h3>
+      <p>Restauração, configuração e otimização segura.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🧽</span>
+      <h3>Limpeza Interna</h3>
+      <p>Limpeza profissional e verificação de componentes.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🔘</span>
+      <h3>Botões Power/Volume</h3>
+      <p>Reparo, troca e calibração precisa.</p>
+    </div>
+
+    <div class="service-card">
+      <span class="icon">🛡️</span>
+      <h3>Película Profissional</h3>
+      <p>Aplicação com acabamento perfeito e durabilidade.</p>
+    </div>
+
+  </div>
+</section>
+<section id="atendimento" class="loc-section">
+  <div class="loc-header">
+    <h2>🏠 Atendimento onde você estiver</h2>
+    <p>Atendimento móvel moderno, prático e seguro. Vamos até você com total conforto, agilidade e transparência.</p>
+  </div>
+
+  <div class="loc-grid">
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Sua casa</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Seu trabalho</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Condomínio</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Comércio</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Estacionamento</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Academia</p>
+    </div>
+
+    <div class="loc-card">
+      <span class="loc-icon">📍</span>
+      <p>Qualquer lugar que você precisar</p>
+    </div>
+
+  </div>
+</section>
+
+  <!-- WhatsApp Floating -->
+  <a class="whatsapp" href="https://wa.me/5561993976464?text=Ol%C3%A1%2C%20quero%20agendar%20um%20atendimento" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20.5 3.5L3.5 20.5" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M17.472 6.343c-1.882-1.882-4.382-2.915-6.834-2.915s-4.951 1.033-6.834 2.915c-3.889 3.889-3.889 10.203 0 14.092L3 21l2.57-.804C8.94 20.06 11.73 20.8 14 20.8c2.452 0 4.952-1.033 6.834-2.915 3.889-3.889 3.889-10.203 0-14.092z" fill="white" opacity="0.06"></path>
+    </svg>
+    Chamar
+  </a>
+</body>
+</html>
