@@ -3,6 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="MBTECH EXPRESS — Assistência técnica móvel especializada em Brasília. Técnico vai até você. Reparos no local com segurança e qualidade. WhatsApp: (61) 99397-6464.">
+
+<meta property="og:title" content="MBTECH EXPRESS — Assistência Técnica Móvel em Brasília">
+<meta property="og:description" content="Reparo profissional onde você estiver. Atendimento móvel, técnico especializado, segurança total e rapidez.">
+<meta property="og:image" content="URL_DA_IMAGEM_DO_HERO">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eduardo130796.github.io/mbtech/">
+
+<meta name="theme-color" content="#0B1020">
   <title>MBTECH EXPRESS — Assistência Técnica Premium</title>
 
   <!-- Google Fonts -->
@@ -382,8 +391,8 @@
   background-size: cover;
   background-position: center;
 
-  opacity: 0.35;
-  filter: blur(1px) brightness(0.8);
+  opacity: 0.45;
+  filter: brightness(0.85) contrast(1.1);
   
   /* Diagonal suave */
   clip-path: polygon(
@@ -572,6 +581,47 @@
   font-weight: 600;
   color: #ffffff;
 }
+
+.why-section {
+  padding: 100px 0;
+  background: #0B1020;
+  text-align: center;
+}
+
+.why-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.why-header p {
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.why-grid {
+  margin-top: 50px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+.why-icon {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
 /* ============================
    S E G U R A N Ç A   P R E M I U M
 ============================ */
@@ -701,6 +751,65 @@
   opacity: 0.75;
 }
 
+.testimonials {
+  padding: 100px 0;
+  background: #0B1020;
+  text-align: center;
+}
+
+.test-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.test-grid {
+  margin-top: 40px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.test-card {
+  padding: 22px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 15px;
+}
+
+.test-name {
+  margin-top: 14px;
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.cta-final {
+  padding: 100px 0;
+  background: #07111f;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-final-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 16px 36px;
+  background: #4d9ea6;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgba(77,158,166,0.35);
+  transition: 0.25s;
+}
+
+.cta-final-btn:hover {
+  transform: translateY(-5px);
+}
 
 .footer {
   background: #070B16;
@@ -835,6 +944,15 @@
   .wa-label { font-size: 15px; }
   .wa-status { font-size: 12px; }
 }
+.wa-dot {
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 4px #23ff70; }
+  50% { box-shadow: 0 0 14px #23ff70; }
+  100% { box-shadow: 0 0 4px #23ff70; }
+}
 /* ===========================
    NAVBAR PREMIUM FIXA
 =========================== */
@@ -909,14 +1027,141 @@
 .nav-btn:hover {
   transform: translateY(-3px);
 }
-
+/* Ajuste porque a navbar é fixa */
+.nav-premium + .hero-suave {
+  padding-top: 160px;
+}
 /* MOBILE */
 @media(max-width: 800px){
   .nav-links a:not(.nav-btn) {
     display: none;
   }
 }
+/* ===========================
+   MOBILE MENU BUTTON
+=========================== */
+
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1001;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.mobile-menu-btn span {
+  width: 100%;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Animation when active */
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* ===========================
+   MOBILE MENU PANEL
+=========================== */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  z-index: 1000;
+
+  background: rgba(11,16,32,0.92);
+  backdrop-filter: blur(14px);
+  border-left: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.35s ease;
+  padding: 28px;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.mobile-menu-header {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.mobile-menu-header strong {
+  color: #4d9ea6;
+}
+
+.mobile-menu a {
+  color: #d8dbd1;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: 0.25s ease;
+}
+
+.mobile-menu a:hover {
+  color: #4d9ea6;
+}
+
+/* WhatsApp button inside mobile menu */
+.mobile-wpp-btn {
+  margin-top: 10px;
+  padding: 14px;
+  background: #4d9ea6;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: white !important;
+}
+
+
+/* SHOW BUTTON ONLY ON MOBILE */
+@media(max-width: 800px){
+  .mobile-menu-btn { display: flex; }
+  .nav-links a:not(.nav-btn) { display: none; }
+  .nav-btn { display: none; }
+}
   </style>
+
+
 </head>
 <body>
     <!-- NAVBAR PREMIUM -->
@@ -931,12 +1176,42 @@
       <a href="#servicos">Serviços</a>
       <a href="#atendimento">Atendimento</a>
       <a href="#locais">Locais</a>
+      <a href="#why">Por que escolher</a>
       <a href="#seguranca">Segurança</a>
-      <a href="https://wa.me/5561993976464" class="nav-btn">WhatsApp</a>
+      <a href="#testemunhos">Depoimentos</a>
+      <a href="#contato-final" class="nav-btn">WhatsApp</a>
     </div>
 
   </div>
 </nav>
+<!-- MOBILE MENU BUTTON -->
+<button class="mobile-menu-btn" id="mobileMenuBtn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<!-- MOBILE MENU (OFF-CANVAS) -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-inner">
+
+    <div class="mobile-menu-header">
+      <span>MBTECH <strong>EXPRESS</strong></span>
+    </div>
+
+    <a href="#servicos">Serviços</a>
+    <a href="#atendimento">Atendimento</a>
+    <a href="#locais">Locais</a>
+    <a href="#why">Por que escolher</a>
+    <a href="#seguranca">Segurança</a>
+    <a href="#testemunhos">Depoimentos</a>
+
+    <a href="https://wa.me/5561993976464" class="mobile-wpp-btn">
+      WhatsApp
+    </a>
+
+  </div>
+</div>
 <header class="hero-suave">
   <div class="hero-content">
 
@@ -1114,6 +1389,41 @@
         </svg>
       </div>
       <p>Qualquer lugar que você precisar</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="why-section" id="why">
+  <div class="why-header">
+    <h2>🔥 Por que escolher a MBTECH EXPRESS?</h2>
+    <p>Seu celular merece atendimento profissional, rápido e seguro.</p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <span class="why-icon">🚗</span>
+      <h3>Atendimento no local</h3>
+      <p>Técnico vai até você — casa, trabalho ou onde preferir.</p>
+    </div>
+
+    <div class="why-card">
+      <span class="why-icon">⚡</span>
+      <h3>Reparo no mesmo dia</h3>
+      <p>Rapidez sem perder qualidade.</p>
+    </div>
+
+    <div class="why-card">
+      <span class="why-icon">🔒</span>
+      <h3>Segurança total</h3>
+      <p>Atendimento na sua frente. Sem risco aos seus dados.</p>
+    </div>
+
+    <div class="why-card">
+      <span class="why-icon">🎯</span>
+      <h3>Transparência</h3>
+      <p>Orçamento claro e sem pegadinhas.</p>
     </div>
 
   </div>
@@ -1305,8 +1615,39 @@
   </p>
 
 </section>
+<section class="testimonials" id="testemunhos">
+  <div class="test-header">
+    <h2>⭐ Depoimentos de clientes</h2>
+    <p>Atendimentos reais, satisfação real.</p>
+  </div>
 
+  <div class="test-grid">
 
+    <div class="test-card">
+      <p>"Me salvou no trabalho. O técnico chegou rápido e arrumou meu iPhone na hora."</p>
+      <div class="test-name">— Mariana R., Asa Sul ⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <div class="test-card">
+      <p>"Muito profissional! Conserto transparente, tudo na minha frente."</p>
+      <div class="test-name">— Lucas M., Octogonal ⭐⭐⭐⭐⭐</div>
+    </div>
+
+    <div class="test-card">
+      <p>"Melhor assistência que já usei. Atendimento VIP mesmo."</p>
+      <div class="test-name">— Ana C., Sudoeste ⭐⭐⭐⭐⭐</div>
+    </div>
+
+  </div>
+</section>
+<section class="cta-final" id="contato-final">
+  <h2>📱 Pronto para consertar seu celular?</h2>
+  <p>Fale agora com um técnico autorizado. Atendimento imediato.</p>
+
+  <a href="https://wa.me/5561993976464" class="cta-final-btn">
+    Chamar no WhatsApp
+  </a>
+</section>
 <footer class="footer">
   <div class="footer-inner">
 
@@ -1359,6 +1700,22 @@
   </div>
 
 </a>
+<script>
+const mobileBtn = document.getElementById("mobileMenuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
 
+mobileBtn.addEventListener("click", () => {
+  mobileBtn.classList.toggle("active");
+  mobileMenu.classList.toggle("open");
+});
+
+// close menu when clicking links
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+    mobileBtn.classList.remove("active");
+  });
+});
+</script>
 </body>
 </html>
