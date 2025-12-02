@@ -835,9 +835,108 @@
   .wa-label { font-size: 15px; }
   .wa-status { font-size: 12px; }
 }
+/* ===========================
+   NAVBAR PREMIUM FIXA
+=========================== */
+
+.nav-premium {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  padding: 14px 0;
+
+  background: rgba(11,16,32,0.55); /* fundo transparente + blur */
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-container {
+  max-width: 1250px;
+  width: 90%;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.nav-logo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.nav-logo strong {
+  color: #4d9ea6; /* destaque da marca */
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d8dbd1;
+  opacity: 0.85;
+  transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: #4d9ea6;
+}
+
+/* BOTÃO DO MENU */
+.nav-btn {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: #4d9ea6;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(77,158,166,0.35);
+  transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* MOBILE */
+@media(max-width: 800px){
+  .nav-links a:not(.nav-btn) {
+    display: none;
+  }
+}
   </style>
 </head>
 <body>
+    <!-- NAVBAR PREMIUM -->
+<nav class="nav-premium">
+  <div class="nav-container">
+
+    <div class="nav-logo">
+      <span>MBTECH <strong>EXPRESS</strong></span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#locais">Locais</a>
+      <a href="#seguranca">Segurança</a>
+      <a href="https://wa.me/5561993976464" class="nav-btn">WhatsApp</a>
+    </div>
+
+  </div>
+</nav>
 <header class="hero-suave">
   <div class="hero-content">
 
