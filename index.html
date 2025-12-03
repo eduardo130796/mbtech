@@ -384,10 +384,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 48%;
+  width: 51%;
   height: 100%;
   
-  background-image: url("maos-reparando-telefone-manutencao-de-smartphone-centro-movel-telefones-celulares-consertar-engenheiro-de-laboratorio-consertar-telefone-celular-quebrado-na-mesa-dispositivo-eletronic.avif");
+  background-image: url("WhatsApp Image 2025-12-02 at 07.28.51.jpeg");
   background-size: cover;
   background-position: center;
 
@@ -396,7 +396,7 @@
   
   /* Diagonal suave */
   clip-path: polygon(
-    20% 0%, 
+    8% 0%, 
     100% 0%, 
     100% 100%, 
     0% 100%
@@ -1159,6 +1159,46 @@
   .nav-links a:not(.nav-btn) { display: none; }
   .nav-btn { display: none; }
 }
+.hero-tagline {
+  display: inline-block;
+  background: rgba(77,158,166,0.15);
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(77,158,166,0.25);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--aqua);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-bottom: 16px;
+}
+/* ======= IMAGEM MOBILE NO HERO ======= */
+
+.hero-image-mobile {
+  display: none; /* não aparece no desktop */
+}
+
+@media(max-width:900px){
+  .hero-image-mobile {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 22px auto;
+    
+    background-image: url("WhatsApp Image 2025-12-02 at 07.28.51.jpeg");
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    opacity: 1;
+  }
+
+  /* mantém sua imagem lateral oculta no mobile */
+  .hero-image {
+    display: none;
+  }
+}
   </style>
 
 
@@ -1175,7 +1215,6 @@
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
       <a href="#atendimento">Atendimento</a>
-      <a href="#locais">Locais</a>
       <a href="#why">Por que escolher</a>
       <a href="#seguranca">Segurança</a>
       <a href="#testemunhos">Depoimentos</a>
@@ -1201,7 +1240,6 @@
 
     <a href="#servicos">Serviços</a>
     <a href="#atendimento">Atendimento</a>
-    <a href="#locais">Locais</a>
     <a href="#why">Por que escolher</a>
     <a href="#seguranca">Segurança</a>
     <a href="#testemunhos">Depoimentos</a>
@@ -1213,14 +1251,16 @@
   </div>
 </div>
 <header class="hero-suave">
+  <!-- IMAGEM MOBILE / LOGO HERO -->
+  <div class="hero-image-mobile"></div>
   <div class="hero-content">
 
     <div class="hero-left">
+      <p class="hero-tagline">REPARO ESPECIALIZADO ONDE VOCÊ ESTIVER</p>
       <h1>
         Seu celular está com problema?<br>
         <span class="hero-highlight">A MBTECH vai até você.</span>
       </h1>
-
       <p class="hero-sub">
         Se o seu celular quebrou, travou, caiu, molhou,
         não carrega ou parou de funcionar,
@@ -1506,114 +1546,6 @@
     </div>
 
   </div>
-</section>
-<section id="locais" class="locais-section">
-
-  <div class="locais-header">
-    <h2>📍 Áreas de atendimento</h2>
-    <p>Atendimento móvel nas principais regiões de Brasília, rápido e com total praticidade.</p>
-  </div>
-
-  <div class="locais-grid">
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-          <circle cx="12" cy="9" r="3" stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Asa Sul</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-          <circle cx="12" cy="9" r="3" stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Asa Norte</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Sudoeste</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Octogonal</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Noroeste</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Lago Sul</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Lago Norte</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>SIG</p>
-    </div>
-
-    <div class="locais-card">
-      <div class="locais-icon">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2C8.1 2 5 5.1 5 9c0 5.3 7 13 7 13s7-7.7 7-13c0-3.9-3.1-7-7-7z"
-                stroke="#4d9ea6" stroke-width="2"/>
-        </svg>
-      </div>
-      <p>Eixo Monumental / Esplanada</p>
-    </div>
-
-  </div>
-
-  <p class="locais-extra">
-    Demais regiões do DF: consulte disponibilidade.
-  </p>
-
 </section>
 <section class="testimonials" id="testemunhos">
   <div class="test-header">
